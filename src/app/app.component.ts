@@ -1,12 +1,14 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ChessBoardComponent } from './chess-board/chess-board.component';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  standalone: true,
+  imports: [CommonModule, ChessBoardComponent],
+  template: `
+    <h1>Angular Chess Game</h1>
+    <app-chess-board></app-chess-board>
+  `,
 })
-export class AppComponent {
-  title = 'chess-app';
-}
+export class AppComponent {}
